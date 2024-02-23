@@ -9,14 +9,13 @@ export const size = {
 export const contentType = 'image/png';
 
 // Image generation
-export default async function Image() {
+export default async function Image({ params }: { params: { id: string } }) {
+  const { id } = params;
   return new ImageResponse(
     (
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 128,
-          background: 'white',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -24,7 +23,16 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        About Acme
+        <img
+          style={{
+            width: '100%',
+            objectFit: 'cover',
+          }}
+          src={
+            'https://ik.imagekit.io/miriya/tr:w-1200,c-at_max/mycar/hL0XAW5GmEpx7Vn5czGs.jpg'
+          }
+          alt=""
+        />
       </div>
     ),
     {
