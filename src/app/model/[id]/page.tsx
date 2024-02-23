@@ -20,7 +20,7 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    metadataBase: new URL('http://localhost:3002'),
+    metadataBase: new URL('https://decal-poc.vercel.app/'),
     title: id,
     // openGraph: {
     //   images: [url, ...previousImages],
