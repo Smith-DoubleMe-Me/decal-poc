@@ -6,7 +6,11 @@ import { uuid } from '@gltf-transform/core';
 
 import Model from './Model';
 
-export default function ModelViewer() {
+type Props = {
+  id: 'deer' | 'export' | 'model2' | 'model4';
+};
+
+export default function ModelViewer({ id }: Props) {
   return (
     <Canvas
       key={uuid()}
@@ -18,7 +22,7 @@ export default function ModelViewer() {
       <ambientLight />
       <Stage adjustCamera environment={'sunset'}>
         <Bounds fit clip observe margin={1}>
-          <Model url={'model4.glb'} />
+          <Model url={`../${id}.glb`} />
         </Bounds>
       </Stage>
       <OrbitControls makeDefault />
