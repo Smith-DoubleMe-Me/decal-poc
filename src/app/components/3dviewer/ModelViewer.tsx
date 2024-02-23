@@ -2,16 +2,14 @@
 
 import { OrbitControls, Stage, Bounds } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useEffect, useState } from 'react';
+import { uuid } from '@gltf-transform/core';
 
 import Model from './Model';
 
 export default function ModelViewer() {
-  const [uniqueKey, setUniqueKey] = useState('');
-
   return (
     <Canvas
-      key={uniqueKey}
+      key={uuid()}
       id="modelViewerCanvas"
       gl={{ preserveDrawingBuffer: true }}
       resize={{ scroll: false }}
@@ -20,7 +18,7 @@ export default function ModelViewer() {
       <ambientLight />
       <Stage adjustCamera environment={'sunset'}>
         <Bounds fit clip observe margin={1}>
-          <Model url={'zombie.gltf'} />
+          <Model url={'model2.glb'} />
         </Bounds>
       </Stage>
       <OrbitControls makeDefault />
