@@ -1,16 +1,18 @@
 import { ImageResponse } from 'next/og';
 
+// Image metadata
 export const alt = 'About Acme';
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = 'image/png';
-export const runtime = 'edge';
 
-export default function og() {
+// Image generation
+export default async function Image() {
   return new ImageResponse(
     (
+      // ImageResponse JSX element
       <div
         style={{
           fontSize: 128,
@@ -22,10 +24,11 @@ export default function og() {
           justifyContent: 'center',
         }}
       >
-        예아 잘 나온다
+        About Acme
       </div>
     ),
     {
+      // ImageResponse options
       ...size,
     },
   );
