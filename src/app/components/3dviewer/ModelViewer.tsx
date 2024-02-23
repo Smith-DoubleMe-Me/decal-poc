@@ -2,7 +2,7 @@
 
 import { OrbitControls, Stage, Bounds } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Model from './Model';
 
@@ -20,7 +20,7 @@ export default function ModelViewer() {
       <ambientLight />
       <Stage adjustCamera environment={'sunset'}>
         <Bounds fit clip observe margin={1}>
-          <Model url={'export.glb'} />
+          <Model url={'zombie.gltf'} />
         </Bounds>
       </Stage>
       <OrbitControls makeDefault />
