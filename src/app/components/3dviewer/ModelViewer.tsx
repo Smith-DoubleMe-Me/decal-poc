@@ -18,7 +18,7 @@ export default function ModelViewer() {
       <ambientLight />
       <Stage adjustCamera environment={'sunset'}>
         <Bounds fit clip observe margin={1}>
-          <Model url={'model2.glb'} />
+          <Model url={'model4.glb'} />
         </Bounds>
       </Stage>
       <OrbitControls makeDefault />
