@@ -3,12 +3,13 @@ import { KHRONOS_EXTENSIONS } from '@gltf-transform/extensions';
 import { metalRough } from '@gltf-transform/functions';
 
 import getGltf from './getGltf';
+import { GLTF } from 'three/examples/jsm/Addons.js';
 
 export const loadModelWithTransform = async (
   url: string,
   gl: THREE.WebGLRenderer,
-): Promise<void> => {
-  new Promise(async (resolve, reject) => {
+): Promise<GLTF> => {
+  return new Promise(async (resolve, reject) => {
     try {
       // Load model in glTF Transform.
       const io = new WebIO().registerExtensions(KHRONOS_EXTENSIONS);
