@@ -22,7 +22,7 @@ export async function generateMetadata(
   return {
     title: id,
     openGraph: {
-      images: [`${id}.png`, ...previousImages],
+      images: [url, ...previousImages],
     },
     description: 'DECAL 3D Model rendering',
   };
