@@ -23,7 +23,7 @@ export async function generateMetadata(
     metadataBase: new URL('https://decal-poc.vercel.app/'),
     title: id,
     openGraph: {
-      images: ['./public/model2.png', ...previousImages],
+      images: [url, ...previousImages],
     },
     description: 'DECAL 3D Model rendering',
   };
