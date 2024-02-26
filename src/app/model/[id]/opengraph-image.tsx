@@ -8,9 +8,10 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-// Image generation
-export default async function Image({ params }: { params: { id: string } }) {
-  const { id } = params;
+// Image generation -> 네트워크탭에서 접근 불가.
+export default async function Image() {
+  // 비동기 통신으로 해당 모델 정보 가져다 가능.
+  // params props를 통하여 query params 접근 가능.
   return new ImageResponse(
     (
       // ImageResponse JSX element
