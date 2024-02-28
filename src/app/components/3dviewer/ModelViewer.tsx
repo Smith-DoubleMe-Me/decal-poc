@@ -2,7 +2,6 @@
 
 import { OrbitControls, Stage, Bounds, Html } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { uuid } from '@gltf-transform/core';
 import { Suspense } from 'react';
 
 import Model from './Model';
@@ -26,7 +25,7 @@ const ModelLoader = () => (
 export default function ModelViewer({ id }: Props) {
   return (
     <Canvas
-      key={uuid()}
+      key={id}
       id="modelViewerCanvas"
       gl={{ preserveDrawingBuffer: true }}
       resize={{ scroll: false }}
