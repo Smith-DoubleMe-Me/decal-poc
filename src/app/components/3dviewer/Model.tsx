@@ -25,7 +25,6 @@ export default function Model({ url }: Props) {
     loader.manager.onError = () => {
       console.error('error');
       alert('Invalid file. Please try with a new 3D glb file.');
-      window.location.reload();
     };
     const THREE_PATH = `https://unpkg.com/three@0.${REVISION}.x`;
     const ktx2Loader = new KTX2Loader(manager).setTranscoderPath(

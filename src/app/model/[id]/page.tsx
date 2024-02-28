@@ -15,8 +15,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const id = params.id;
 
-  const { url } = searchParams;
-
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
@@ -29,7 +27,7 @@ export async function generateMetadata(
   };
 }
 
-export default function Home({ params, searchParams }: Props) {
+export default function Home({ params }: Props) {
   const query = params.id as IdProps;
 
   return (
