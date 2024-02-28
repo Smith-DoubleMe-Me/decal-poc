@@ -22,7 +22,7 @@ const IMAGE_LIST = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen items-center justify-between p-24 md:flex-col">
       <div className="h-fit w-[820px] overflow-hidden">
         <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-10">
           {IMAGE_LIST.map((image) => {
