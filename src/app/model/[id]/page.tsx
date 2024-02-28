@@ -32,7 +32,10 @@ export default function Home({ params }: Props) {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="relative flex h-[550px] w-[620px] items-center justify-center overflow-hidden rounded-3xl border">
+      <div
+        className="relative flex h-[258px] w-[339px] items-center justify-center overflow-hidden
+    rounded-3xl border md:h-[522px] md:w-[700px]"
+      >
         <ModelViewer id={query} />
       </div>
     </main>
