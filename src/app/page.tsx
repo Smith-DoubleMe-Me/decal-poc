@@ -23,7 +23,7 @@ const IMAGE_LIST = [
 export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-between p-24 md:flex-col">
-      <div className="h-fit w-[820px] overflow-hidden">
+      <div className="h-fit w-fit overflow-hidden">
         <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-10">
           {IMAGE_LIST.map((image) => {
             return (
@@ -33,6 +33,11 @@ export default function Home() {
                   alt={image.id}
                   width={400}
                   height={400}
+                  sizes="100vw"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
                 <div>
                   <Link href={`/model/${image.id}`} className="hover:font-bold">
