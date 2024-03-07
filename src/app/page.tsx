@@ -20,7 +20,23 @@ const IMAGE_LIST = [
   },
 ];
 
-export default function Home() {
+async function getData() {
+  const res = await fetch(
+    'https://gateway-server-new.dev-twin.world//media-management/category',
+  );
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+export default async function Home() {
+  const data = await getData();
+
+  console.log(data);
+
   return (
     <main className="flex min-h-screen items-center justify-between p-24 md:flex-col">
       <div className="h-fit w-fit overflow-hidden">
