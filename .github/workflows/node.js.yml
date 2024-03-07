@@ -26,4 +26,4 @@ jobs:
       - run: npm install --package-lock-only
       - run: npm ci --legacy-peer-deps
       - run: npm run build --if-present
-      - run: pm2 restart decal
+      - run: pm2 restart decal-poc
