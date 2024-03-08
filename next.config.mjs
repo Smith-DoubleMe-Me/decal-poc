@@ -17,6 +17,16 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'gateway-server-new.dev-twin.world',
+        port: '',
+        pathname: '/media-download/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

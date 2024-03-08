@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { getItems } from '@/actions/getItems';
 import { useInView } from 'react-intersection-observer';
+import Image from 'next/image';
 
 type ItemListProps = {
   initialItems: any[];
@@ -33,6 +34,13 @@ export default function ItemList({ initialItems }: ItemListProps) {
         <div key={item.id} className="flex flex-col gap-2">
           <h3 className="text-lg font-bold">{item.name}</h3>
           <p>{item.description}</p>
+          <Image
+            src={`${process.env.NEXT_PUBLIC_URL}/media-download/${item.id}?size=original&fileType=thumbnail`}
+            alt={item.name}
+            width={100}
+            height={100}
+            className="pointer-events-none"
+          />
         </div>
       ))}
       <div ref={ref}>Loading...</div>
