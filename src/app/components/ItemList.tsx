@@ -44,7 +44,7 @@ export default function ItemList({ initialItems }: ItemListProps) {
             className="pointer-events-none"
             priority
           />
-          {/* <ModelViewer id={item.id} /> */}
+          <ModelViewer id={item.id} />
         </div>
       ))}
       <div ref={ref}>Loading...</div>
