@@ -39,8 +39,13 @@ interface Data {
   updatedAt: Date;
 }
 
+interface CategoryData {
+  message: string | null;
+  data: Data[];
+}
+
 export default async function Home() {
-  const data: Data[] = await getData();
+  const data: CategoryData = await getData();
 
   return (
     <main className="flex min-h-screen items-center justify-between p-24 md:flex-col">
