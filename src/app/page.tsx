@@ -32,10 +32,15 @@ async function getData() {
   return res.json();
 }
 
-export default async function Home() {
-  const data = await getData();
+interface Data {
+  id: string;
+  name: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
-  console.log(data);
+export default async function Home() {
+  const data: Data[] = await getData();
 
   return (
     <main className="flex min-h-screen items-center justify-between p-24 md:flex-col">
@@ -62,6 +67,11 @@ export default async function Home() {
                 </div>
               </li>
             );
+          })}
+        </ul>
+        <ul>
+          {data.data.map((d) => {
+            return <li key={d.id}>{d.name}</li>;
           })}
         </ul>
       </div>
