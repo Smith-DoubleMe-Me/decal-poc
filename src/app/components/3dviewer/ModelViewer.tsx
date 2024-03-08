@@ -35,7 +35,9 @@ export default function ModelViewer({ id }: Props) {
       <Suspense fallback={<ModelLoader key={id} />}>
         <Stage adjustCamera environment={'sunset'}>
           <Bounds fit clip observe margin={1}>
-            <Model url={`../${id}.glb`} />
+            <Model
+              url={`${process.env.NEXT_PUBLIC_URL}/media-download/${id}?size=original&fileType=model&isFlipMode=false`}
+            />
           </Bounds>
         </Stage>
       </Suspense>

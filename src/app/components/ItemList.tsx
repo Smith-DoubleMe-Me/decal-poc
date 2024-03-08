@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { getItems } from '@/actions/getItems';
 import { useInView } from 'react-intersection-observer';
+
+import ModelViewer from './3dviewer/ModelViewer';
 import Image from 'next/image';
 
 type ItemListProps = {
@@ -40,7 +42,9 @@ export default function ItemList({ initialItems }: ItemListProps) {
             width={100}
             height={100}
             className="pointer-events-none"
+            priority
           />
+          <ModelViewer id={item.id} />
         </div>
       ))}
       <div ref={ref}>Loading...</div>

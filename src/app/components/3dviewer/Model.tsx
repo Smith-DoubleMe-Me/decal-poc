@@ -36,47 +36,47 @@ export default function Model({ url }: Props) {
   const gltf = useGLTF(url, true, false, myLoader);
   gltf.scene.updateMatrixWorld(true);
 
-  // useEffect(() => {
-  //   const transform = (url: string) => {
-  //     loadModelWithTransform(url, gl)
-  //       .then((gltf) => {
-  //         gltf.scene.updateMatrixWorld();
-  //         setTransformModel(gltf);
-  //       })
-  //       .catch((error) => {
-  //         console.log(error);
-  //         setTransformModel(undefined);
-  //       });
-  //   };
+  useEffect(() => {
+    const transform = (url: string) => {
+      loadModelWithTransform(url, gl)
+        .then((gltf) => {
+          gltf.scene.updateMatrixWorld();
+          setTransformModel(gltf);
+        })
+        .catch((error) => {
+          console.log(error);
+          setTransformModel(undefined);
+        });
+    };
 
-  // const usedKHRMaterialsPbrSpecularGlossiness = () => {
-  //   // `extensionsUsed`에서 확장의 사용 여부 확인
-  //   const usesExtension =
-  //     gltf.parser.json.extensionsUsed?.includes(
-  //       'KHR_materials_pbrSpecularGlossiness',
-  //     ) ?? false;
+    const usedKHRMaterialsPbrSpecularGlossiness = () => {
+      // `extensionsUsed`에서 확장의 사용 여부 확인
+      const usesExtension =
+        gltf.parser.json.extensionsUsed?.includes(
+          'KHR_materials_pbrSpecularGlossiness',
+        ) ?? false;
 
-  //   // 각 재질을 확인하여 확장 사용 여부 검사
-  //   const materialUsesExtension =
-  //     gltf.parser.json.materials?.some(
-  //       (material: any) =>
-  //         material.extensions?.KHR_materials_pbrSpecularGlossiness !==
-  //         undefined,
-  //     ) ?? false;
+      // 각 재질을 확인하여 확장 사용 여부 검사
+      const materialUsesExtension =
+        gltf.parser.json.materials?.some(
+          (material: any) =>
+            material.extensions?.KHR_materials_pbrSpecularGlossiness !==
+            undefined,
+        ) ?? false;
 
-  //   return usesExtension || materialUsesExtension;
-  // };
+      return usesExtension || materialUsesExtension;
+    };
 
-  if (!gltf) {
-    setTransformModel(undefined);
-    return;
-  }
+    if (!gltf) {
+      setTransformModel(undefined);
+      return;
+    }
 
-  //   // KHR_materials_pbrSpecularGlossiness를 사용할 경우 변환
-  //   if (usedKHRMaterialsPbrSpecularGlossiness()) {
-  //     transform(url);
-  //   }
-  // }, [gl, gltf, url]);
+    // KHR_materials_pbrSpecularGlossiness를 사용할 경우 변환
+    if (usedKHRMaterialsPbrSpecularGlossiness()) {
+      transform(url);
+    }
+  }, [gl, gltf, url]);
 
   return (
     <group ref={ref}>
