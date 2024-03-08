@@ -22,7 +22,7 @@ const IMAGE_LIST = [
 
 async function getData() {
   const res = await fetch(
-    'https://gateway-server-new.dev-twin.world//media-management/category',
+    `${process.env.NEXT_PUBLIC_URL}/media-management/category`,
   );
 
   if (!res.ok) {
