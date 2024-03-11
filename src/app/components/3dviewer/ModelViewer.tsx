@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 import Model from './Model';
 
 type Props = {
-  id: 'deer' | 'export' | 'model2' | 'model4';
+  id: string;
 };
 
 const ModelLoader = () => (

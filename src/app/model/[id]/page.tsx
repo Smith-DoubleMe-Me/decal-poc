@@ -7,12 +7,7 @@ type Props = {
   searchParams: { [key: string]: any };
 };
 
-type IdProps = 'deer' | 'export' | 'model2' | 'model4';
-
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
 
   return {
@@ -32,7 +27,7 @@ export async function generateMetadata(
 }
 
 export default function Home({ params }: Props) {
-  const query = params.id as IdProps;
+  const query = params.id;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
