@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 import ModelViewer from '@/app/components/3dviewer/ModelViewer';
 

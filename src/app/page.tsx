@@ -21,7 +21,10 @@ export default async function Home() {
                   sizes="100vw"
                 />
                 <div>
-                  <Link href={`/model/${item.id}`} className="hover:font-bold">
+                  <Link
+                    href={`/model?id=${item.id}`}
+                    className="hover:font-bold"
+                  >
                     View the model
                   </Link>
                 </div>
