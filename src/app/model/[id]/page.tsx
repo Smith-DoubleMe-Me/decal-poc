@@ -16,7 +16,7 @@ export async function generateMetadata(
   const id = params.id;
 
   return {
-    metadataBase: new URL('https://main.doysagsh5ahos.amplifyapp.com/'),
+    metadataBase: new URL('https://decal-poc.vercel.app/'),
     title: id,
     openGraph: {
       images: [
