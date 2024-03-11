@@ -15,13 +15,17 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const id = params.id;
 
-  const previousImages = (await parent).openGraph?.images || [];
-
   return {
-    metadataBase: new URL('https://decal-poc.vercel.app/'),
+    metadataBase: new URL('https://main.doysagsh5ahos.amplifyapp.com/'),
     title: id,
     openGraph: {
-      images: [`/${id}.png`, ...previousImages],
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_URL}/media-download/${id}?size=original&fileType=thumbnail`,
+          width: 400,
+          height: 400,
+        },
+      ],
     },
     description: 'DECAL 3D Model rendering',
   };
